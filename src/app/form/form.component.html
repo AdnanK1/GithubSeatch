@@ -1,10 +1,10 @@
 <div class="container">
    <form (ngSubmit)="onSubmit()" action="" method="get" #logform="ngForm">
           <label for="email" class="form-label">Email</label>
-          <input [(ngModel)]="newData.email" name="email" id="email " type="text " class="form-control " required>
+          <input type="email" [(ngModel)]="newData.email" class="form-control" id="email">
         
           <label for="password" class="form-label">Password</label>
-          <input [(ngModel)]="newData.password" name="password" id="email " type="text " class="form-control " required>
+          <input type="password" [(ngModel)]="newData.password" class="form-control" id="password">
         <div class="Button">
           <button type="submit" class="btn btn-primary">Sign in</button>
         </div>
