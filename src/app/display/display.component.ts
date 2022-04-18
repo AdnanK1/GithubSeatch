@@ -17,6 +17,11 @@ export class DisplayComponent implements OnInit {
 
   constructor(private dataService: 
   DataServiceService) { 
+    this.user = false
+    
+  }
+
+  ngOnInit(): void {
     this.dataService.getData()
     .subscribe(user =>{
       this.user = user;
@@ -26,17 +31,11 @@ export class DisplayComponent implements OnInit {
     .subscribe(repos =>{
       this.repos = repos;
     });
-    
-  }
-
-  ngOnInit(): void {
-    search();{
+    search(){
       this.dataService.updateUsername(this.username);
     }
   }
   
 }
-function search() {
-  throw new Error('Function not implemented.');
-}
+
 
