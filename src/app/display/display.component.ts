@@ -19,8 +19,7 @@ export class DisplayComponent implements OnInit {
     this.dataService.getData()
     .subscribe(datas =>{
       this.datas = datas;
-      console.log(this.datas);
-    });
+    });// used to retrieve data from the api.
   }
 
   ngOnInit(): void {
