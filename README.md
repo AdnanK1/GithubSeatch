@@ -11,7 +11,7 @@ One should have a well functioning computer / laptop with the minimum requiremen
 * the preferred brand is Lenovo or HP
 
 # Deployment
-> To view the application click on this link
+> To view the application click on this link https://github-search-coral.vercel.app/
 
 # Technologies Used 
 The Technologies used are:
