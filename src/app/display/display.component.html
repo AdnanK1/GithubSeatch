@@ -7,59 +7,58 @@
       </form>    
   </div>    
 </div>
-
-<div *ngIf="user">
-  <div class="panel panel-default">
-      <div class="panel-heading">
-          <h3 class="panel-title">{{user.name}}</h3>
-      </div>
-      <div class="panel-body">
-          <div class="row">
-              <div class="col-md-4">
-                  <img class="img-thumbnail github-avatar" src="{{user.avatar_url}}">
-              </div>
-              <div class="col-md-8">
-                  <div class="stats">
-                  <span class="label label-default">{{user.public_repos}} Public Repos</span>
-                  <span class="label label-primary">{{user.public_gists}} Public Gists</span>
-                  <span class="label label-success">{{user.followers}} Followers</span>
-                  <span class="label label-info">{{user.following}} Following</span>
+<div class="chat" *ngIf="user">
+    <div class="row">
+      <div class="col">
+        <div class="card text-center">
+          <div class="card-header">
+           <h3>{{user.name}}</h3>
+          </div>
+          <div class="card-body" >
+              <div class="row">
+                  <div class="col">
+                    <img class="github-avatar img-thumbnail" width="250" height="300" src="{{user.avatar_url}}" alt="">
                   </div>
-                  <br>
-                  <ul class="list-group">
-                      <li class="list-group-item"><strong>Username: </strong>{{user.login}}</li> 
-                       <li class="list-group-item"><strong>Location: </strong>{{user.location}}</li>
-                        <li class="list-group-item"><strong>Email: </strong>{{user.email}}</li>
-                         <li class="list-group-item"><strong>Blog: </strong>{{user.blog}}</li> 
-                          <li class="list-group-item"><strong>Member Since: </strong>{{user.created_at}}</li>  
-                  </ul>
-              </div>    
+                  <div class="col">
+                    <div class="stats">
+                      <span class="button btn-primary" style="border-radius: 2cm;" >{{user.pulic_repos}} Public Repositories </span>
+                      <span   class="label label-success">{{user.public_gists}} Public Gists</span>
+                      <span class="label label-info"> {{user.followers}} Followers</span>
+                      <span class="label label-warning">{{user.following}} Following </span>
+                    </div>
+                    <ul class="list-group">
+                      <li class="list-group-items"><strong>Username:</strong> {{user.login}} </li>
+                      <li class="list-group-items"><strong>Location:</strong>{{user.location}}</li>
+                      <li class="list-group-items"><strong>Blog:</strong>{{user.blog}}</li>
+                      <li class="list-group-items"><strong>Member Since:</strong>{{user.created_at}}</li>
+                    </ul>
+                  </div>
+                </div>
           </div>
+        </div>
       </div>
-  </div>
-  
-  <div class="panel panel-default">
-      <div class="panel-heading">
-          <h3 class="panel-title">Repos</h3>
-      </div>
-      <div class="panel-body">
-          <div class="row">
-              <div class="col-md-12">
-                  <div *ngFor="let repo of repos">
-                      <div class="row">
-                          <div class="col-md-9">
-                              <h4><a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></h4>    
-                              <p>{{repo.description}}</p>
-                          </div>
-                          <div class="col-md-3">
-                              <span class="label label-default">{{repo.watchers}} Watchers</span>
-                              <span class="label label-primary">{{repo.forks}} Forks</span>
-                          </div>    
-                      </div> 
-                      <hr />  
-                  </div>    
-              </div>    
+        <div class="container">
+          <div class="card text-center">
+            <div class="card-header">
+              {{user.name}}'s Repositories
+            </div>
+            <div class="card-body">
+              <div *ngFor="let repo of repos">
+                <div class="row">
+                  <div class="col">
+                    <h4><a href="{{repo.html}}" target="_blank">{{repo.name}}</a></h4>
+                    <p>{{repo.description}}</p>
+                  </div>
+                  <div class="col">
+                    <span class="label label-primary">{{repo.watchers}} Watchers</span>
+                    <span class="label label-primary">{{user.forks}} Forks</span>
+                  </div>
+                  </div>
+                </div>
+        
+              </div>
+              
           </div>
+        </div>
       </div>
- </div>
-</div>
+    </div>
