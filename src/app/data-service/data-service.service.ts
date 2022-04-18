@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class DataServiceService {
-  private username = 'adnank1';
+  private username = '';
   
   constructor(private http: HttpClient) { }
   getData():Observable<any> {

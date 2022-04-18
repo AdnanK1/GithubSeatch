@@ -33,7 +33,18 @@ export class DisplayComponent implements OnInit {
     });
     search(){
       this.dataService.updateUsername(this.username);
-    }
+  
+      this.dataService.getData()
+    .subscribe(user => {
+        this.user = user;
+        
+      });
+  
+      this.dataService.getRepo().subscribe(repos => {
+       this.repos = repos;
+      });
+  
+   }
   }
   
 }
