@@ -17,36 +17,29 @@ export class DisplayComponent implements OnInit {
 
   constructor(private dataService: 
   DataServiceService) { 
-    this.user = false
     
+  }
+  search (){
+    this.dataService.updateUsername(this.username);
+
+    this.dataService.getData().subscribe(user => {
+      this.user = user;
+      
+    });
+
+    this.dataService.getRepo().subscribe(repos => {
+      this.repos = repos;
+      
+    });
+
   }
 
+  
+
+
   ngOnInit(): void {
-    this.dataService.getData()
-    .subscribe(user =>{
-      this.user = user;
-    });// used to retrieve data from the api.
-    
-    this.dataService.getRepo()
-    .subscribe(repos =>{
-      this.repos = repos;
-    });
-    search(){
-      this.dataService.updateUsername(this.username);
-  
-      this.dataService.getData()
-    .subscribe(user => {
-        this.user = user;
-        
-      });
-  
-      this.dataService.getRepo().subscribe(repos => {
-       this.repos = repos;
-      });
-  
-   }
   }
-  
+
 }
 
 
