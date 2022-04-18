@@ -6,12 +6,12 @@ import { Data } from '../data/data';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  newData = new Data("","");
+  newData = new Data(0,"","");
   @Output () addData = new EventEmitter<Data>();
   onSubmit(){
     this.addData.emit(this.newData);
-    this.newData = new Data("","");
-    console.log('Data received');
+    this.newData = new Data(0,"","");
+    console.log(this.newData);
 
 }
   constructor() { }
