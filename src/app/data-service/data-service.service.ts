@@ -16,4 +16,7 @@ export class DataServiceService {
   getRepo():Observable<any> {
     return this.http.get<any>(`https://api.github.com/users/ `+this.username+ `repos`);
   }
+  updateUsername(username:string){
+    this.username = username;
+  }
 }

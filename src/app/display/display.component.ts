@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class DisplayComponent implements OnInit {
   repos: any;
   user:any;
+  username:any;
 
   subscription: Subscription = new Subscription;
 
@@ -25,10 +26,17 @@ export class DisplayComponent implements OnInit {
     .subscribe(repos =>{
       this.repos = repos;
     });
+    
   }
 
   ngOnInit(): void {
-    
+    search();{
+      this.dataService.updateUsername(this.username);
+    }
   }
   
 }
+function search() {
+  throw new Error('Function not implemented.');
+}
+
