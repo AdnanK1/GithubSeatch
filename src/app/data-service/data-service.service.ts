@@ -7,12 +7,13 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class DataServiceService {
+  private username = 'adnank1';
   
   constructor(private http: HttpClient) { }
   getData():Observable<any> {
-    return this.http.get<any>(`https://api.github.com/users?api_key=${environment.apiKey}`);
+    return this.http.get<any>(`https://api.github.com/users/` +this.username);
   }
   getRepo():Observable<any> {
-    return this.http.get<any>(`https://api.github.com/users?api_key=${environment.apiKey}/repos`);
+    return this.http.get<any>(`https://api.github.com/users/ `+this.username+ `repos`);
   }
 }

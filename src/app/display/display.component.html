@@ -1,18 +1,32 @@
 <form class="row g-3">
   <div class="col-md-6">
-   <div *ngIf="let data of datas;">
-    <div class="card" style="width: 18rem;">
-      <div class="card-header">
-        Featured
+   <div *ngIf="user;">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title">{{user.name}}</h3>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-      </ul>
-    </div>
-   </div>
+      <div class="panel-body">
+          <div class="row">
+              <div class="col-md-4">
+                  <img class="img-thumbnail github-avatar" src="{{user.avatar_url}}">
+              </div>
+              <div class="col-md-8">
+                  <div class="stats">
+                  <span class="label label-default">{{user.public_repos}} Public Repos</span>
+                  <span class="label label-primary">{{user.public_gists}} Public Gists</span>
+                  <span class="label label-success">{{user.followers}} Followers</span>
+                  <span class="label label-info">{{user.following}} Following</span>
+                  </div>
+                  <br>
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>username: </strong>{{user.login}}</li> 
+                       <li class="list-group-item"><strong>Location: </strong>{{user.location}}</li>
+                        <li class="list-group-item"><strong>Email: </strong>{{user.email}}</li>
+                         <li class="list-group-item"><strong>Blog: </strong>{{user.blog}}</li> 
+                          <li class="list-group-item"><strong>Member Since: </strong>{{user.created_at}}</li>  
+                  </ul>
+              </div>    
+          </div>
+      </div>
   </div>
-  <div class="col-md-6">
-    <app-form></app-form>
-  </div>
+  
